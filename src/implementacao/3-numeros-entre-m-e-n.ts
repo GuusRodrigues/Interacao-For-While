@@ -1,8 +1,7 @@
-//Faça um programa que leia dois números M e N, e mostre todos os números entre eles na tela (o usuário deve informar um valor para M menor que o valor de N).
+function mostrarNumerosEntreMeN(M: number, N: number) {
 
-function mostrarNumerosEntreMeN(numM: number, numN: number) {
-    
-    for 
-
-
+    for(let i = M + 1; N > i; i++){
+        console.log(i);
+    }
 }
+mostrarNumerosEntreMeN(4,8);
