@@ -1,4 +1,3 @@
-//Faça um programa que leia N números e mostre o segundo maior valor digitado.
 function mostrarSegundoMaiorValor(numeros: number[]) {
     let maior = 0;
     let segundoMaior = 0;
