@@ -12,8 +12,11 @@ function somarNumerosEntreMeN(M: number, N: number) {
         return;
     }
 
-    for(let i = M; N >= i; i++){
-            console.log(i);  
+    let soma = 0;
+    for(let i = M; i <= N ; i++){
+        soma += i;
         }
+        console.log(soma);
     }
-somarNumerosEntreMeN(9,-8)
+
+somarNumerosEntreMeN(9,8)
