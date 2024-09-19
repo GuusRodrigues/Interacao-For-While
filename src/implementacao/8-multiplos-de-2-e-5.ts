@@ -14,39 +14,36 @@ async function fazerPergunta(pergunta: string): Promise<string> {
     return new Promise(resolve => lerterminal.question(pergunta, resolve));
 }
 
-
 async function analiseMultiplos(): Promise<void> {
 
     let multiplosDe2e5 = 0;
     let multiplosDe2e3 = 0;
+    let numero: number;
 
     console.log("Digite -1 para encerrar a entrada de dados");
-    
-    // Ler os números fornecidos pelo usuário até digitar -1
-    const numeros = await fazerPergunta("Digite o número: ");
-    const numero = parseFloat(numeros || "0");
 
-    while(numero !== -1){
+    // Loop para continuar recebendo entradas até que -1 seja digitado
+    do {
+        const numeros = await fazerPergunta("Digite um número: ");
+        numero = parseFloat(numeros || "0");
 
-        if (numero >= 0){
-
-            if(numero % 2 === 0 && numero % 5 === 0){
-                multiplosDe2e5 ++;
-                
+        if (numero >= 0) {
+            if (numero % 2 === 0 && numero % 5 === 0) {
+                multiplosDe2e5++;
             }
-            if(numero % 2 === 0 && numero % 3 === 0){
-                multiplosDe2e3 ++;
-                
+            if (numero % 2 === 0 && numero % 3 === 0) {
+                multiplosDe2e3++;
             }
-
-            lerterminal.close(); // Fecha o readline 
         }
 
-    }
+    } while (numero !== -1);
 
-    console.log(`${multiplosDe2e5} são multiplos de 2 e 5`)
-    console.log(`${multiplosDe2e3} são multiplos de 2 e 3`)
-    
+    // Fecha o readline após o fim da coleta de dados
+    lerterminal.close();
+
+    // Exibindo o resultado
+    console.log(`${multiplosDe2e5} são múltiplos de 2 e 5`);
+    console.log(`${multiplosDe2e3} são múltiplos de 2 e 3`);
 }
 
 analiseMultiplos();
