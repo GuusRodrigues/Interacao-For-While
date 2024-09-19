@@ -18,17 +18,29 @@ async function fazerPergunta(pergunta: string): Promise<string> {
 async function analiseMultiplos(): Promise<void> {
 
     let i = 0;
+    let multiplosDe2e5 = 0;
+    let multiplosDe2e3 = 0;
 
-    while(i > 0){
+    while(i <= 0){
 
-        const numeros = await fazerPergunta("Digite a primeira nota: ");
+        const numeros = await fazerPergunta("Digite o número: ");
         const numero: number = parseFloat(numeros || "0");
 
         if (numero < 0){
             if(numero % 2 === 0 && numero % 5 === 0){
-                console.log('múltiplos de 2 e 5')
+                multiplosDe2e5 ++;
+                
             }
+            if(numero % 2 === 0 && numero % 3 === 0){
+                multiplosDe2e3 ++;
+                
+            }
+            i++;
+            lerterminal.close(); // Fecha o readline 
         }
 
     }
+    
 }
+
+analiseMultiplos();

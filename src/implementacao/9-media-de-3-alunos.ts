@@ -42,3 +42,4 @@ async function mediaNotas(): Promise<void> {
 }
 
 mediaNotas();
+

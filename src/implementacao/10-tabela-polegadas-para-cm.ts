@@ -3,9 +3,9 @@
 function tabelaConversao() {
     let i = 0;
     let polegadas = 2.54
-    while(i <= 0){
+    while(i <= 20){
         let conversor = polegadas * i;
-        console.log(`| ${i} cm    | ${conversor} pol   |`);
+        console.log(`| ${i} cm   | ${conversor} pol  |`);
         i++
     }
 }
