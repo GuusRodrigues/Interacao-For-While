@@ -1,4 +1,4 @@
-//Faça um programa no qual o usuário insira valores numéricos positivos até digitar -1 e ao final
+// Faça um programa no qual o usuário insira valores numéricos positivos até digitar -1 e ao final
 // informe entre os números digitados quantos são:
 // (a) múltiplos de 2 e 5, simultaneamente; (b) múltiplos de 2 e 3.
 
@@ -17,16 +17,19 @@ async function fazerPergunta(pergunta: string): Promise<string> {
 
 async function analiseMultiplos(): Promise<void> {
 
-    let i = 0;
     let multiplosDe2e5 = 0;
     let multiplosDe2e3 = 0;
 
-    while(i <= 0){
+    console.log("Digite -1 para encerrar a entrada de dados");
+    
+    // Ler os números fornecidos pelo usuário até digitar -1
+    const numeros = await fazerPergunta("Digite o número: ");
+    const numero = parseFloat(numeros || "0");
 
-        const numeros = await fazerPergunta("Digite o número: ");
-        const numero: number = parseFloat(numeros || "0");
+    while(numero !== -1){
 
-        if (numero < 0){
+        if (numero >= 0){
+
             if(numero % 2 === 0 && numero % 5 === 0){
                 multiplosDe2e5 ++;
                 
@@ -35,11 +38,14 @@ async function analiseMultiplos(): Promise<void> {
                 multiplosDe2e3 ++;
                 
             }
-            i++;
+
             lerterminal.close(); // Fecha o readline 
         }
 
     }
+
+    console.log(`${multiplosDe2e5} são multiplos de 2 e 5`)
+    console.log(`${multiplosDe2e3} são multiplos de 2 e 3`)
     
 }
 
